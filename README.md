@@ -1,7 +1,3 @@
-Here’s a basic `README.md` template for your restaurant table reservation app project. This README includes details about the frontend, backend, and commands to run the project.
-
----
-
 # Restaurant Table Reservation App
 
 This is a full-stack restaurant table reservation application designed to allow customers to reserve tables online. Admins can manage restaurant menus, reservations, and customer details through their accounts.
