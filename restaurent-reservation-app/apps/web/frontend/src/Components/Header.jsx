@@ -1,5 +1,5 @@
 import React from 'react';
- 
+import '../Styles/Header.css'; 
 
 function Header() {
   return (
@@ -50,7 +50,7 @@ function Header() {
           <div className="logo">
             <a href="./index.html">
               <i className="fa fa-utensils me-3"></i>
-              <h1 className="mb-0">Restoran</h1>
+              <h1 className="mb-0">Restaurant Managment System</h1>
             </a>
           </div>
         </div>
