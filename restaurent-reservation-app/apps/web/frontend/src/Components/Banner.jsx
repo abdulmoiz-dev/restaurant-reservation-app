@@ -1,5 +1,5 @@
 import React from 'react';
-import './Styles/Banner.css'; // Make sure to create this CSS file or adjust the path
+import '../Styles/Banner.css'; // Make sure to create this CSS file or adjust the path
 
 function Banner() {
   return (
