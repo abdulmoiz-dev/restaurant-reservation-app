@@ -1,12 +1,24 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 
 /* Header Start */
-
 header {
   position: fixed;
   width: 100%;
   padding: 0;
   margin: 0;
-  /* background-color: var(--primary-color); */
   box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 7px 5px 15px -4px rgba(0, 0, 0, 0.75);
@@ -41,7 +53,6 @@ header.scrolled {
   font-size: 40px;
 }
 
-
 .menus > ul > li {
   position: relative;
 }
@@ -73,10 +84,7 @@ header.scrolled {
   color: var(--text-color-white);
 }
 
-
-
 /* Search bar */
-
 .search-bar {
   display: flex;
   position: fixed;
@@ -94,7 +102,7 @@ header.scrolled {
   top: 0;
 }
 
-.close-btn{
+.close-btn {
   position: absolute;
   top: 20px;
   right: 30px;
@@ -110,7 +118,6 @@ header.scrolled {
   display: flex;
   height: 60px;
   width: 80%;
-  /* border: #e5612f 1px solid; */
   border-radius: 30px;
 }
 
@@ -142,10 +149,7 @@ header.scrolled {
 }
 /* Search bar */
 
-
-
-/* shopping cart start */
-
+/* Shopping Cart Start */
 .shopping-cart {
   position: fixed;
   width: 450px;
@@ -167,6 +171,7 @@ header.scrolled {
   font-weight: 300;
   font-size: 24px;
 }
+
 .shopping-cart-header i {
   cursor: pointer;
   font-size: 34px;
@@ -191,7 +196,7 @@ header.scrolled {
   font-size: 14px;
 }
 
-.shopping-cart-item .item-price p, .shopping-cart-footer .footet-total-price{
+.shopping-cart-item .item-price p, .shopping-cart-footer .footet-total-price {
   font-family: "Pacifico", cursive;
   font-size: 18px;
   color: var(--primary-color);
@@ -227,7 +232,7 @@ header.scrolled {
 
 .shopping-cart-body {
   height: 65vh;
-  overflow-y:auto;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -265,7 +270,7 @@ header.scrolled {
   background-color: transparent;
 }
 
-.footer-checkout > .anim-layer, .footer-shopping > .anim-layer{
+.footer-checkout > .anim-layer, .footer-shopping > .anim-layer {
   position: absolute;
   top: 0;
   right: 0;
@@ -289,7 +294,7 @@ header.scrolled {
   color: #141214;
 }
 
-.footer-shopping:hover a {
+.footer-checkout:hover a, .footer-shopping:hover a {
   color: var(--text-color-white);
 }
 
@@ -327,4 +332,4 @@ header.scrolled {
   }
 }
 
-/* shopping cart end */
+/* Shopping Cart End */

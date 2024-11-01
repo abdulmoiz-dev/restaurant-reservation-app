@@ -1,11 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App'; // This will import App.jsx
+import ReactDOM from 'react-dom/client';
+import './index.css'; // Include the CSS file for styling
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
+
+// Performance measurement setup
+reportWebVitals();
