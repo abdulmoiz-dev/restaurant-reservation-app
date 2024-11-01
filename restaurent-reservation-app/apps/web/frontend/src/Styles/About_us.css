@@ -1,0 +1,55 @@
+
+/* about us start */
+.about-us {
+    background-image: url("./../images/about-bg.jpg");
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  .about-us .about-content .section-title,
+  .menu-page .chef-choise .section-title {
+    position: relative;
+    display: inline;
+    font-family: "Pacifico", cursive;
+    color: var(--primary-color);
+  }
+  
+  .about-us .about-content {
+    color: var(--text-color-white);
+  }
+  
+  .about-extra h6 {
+    color: var(--text-color-white);
+  }
+  
+  .about-img-box > div > div:nth-child(2) > img {
+    margin-top: 25%;
+  }
+  
+  .about-content .section-title::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    right: -55px;
+    margin-top: -1px;
+    background: var(--primary-color);
+  }
+  
+  .about-content .fa.fa-utensils {
+    color: var(--primary-color);
+  }
+  
+  .about-extra .about-experience,
+  .about-extra .about-popular {
+    border-left: 3.5px solid var(--primary-color);
+  }
+  
+  .about-extra .about-experience h1,
+  .about-extra .about-popular h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+  }

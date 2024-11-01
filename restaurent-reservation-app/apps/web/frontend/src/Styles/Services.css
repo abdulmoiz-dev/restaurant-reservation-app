@@ -1,0 +1,54 @@
+
+/* services cards start */
+
+.services .cards {
+    position: relative;
+    background-color: var(--background-color);
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    -webkit-box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+  }
+  
+  .services .cards .icon i,
+  .services .cards .heading h5,
+  .services .cards .para p {
+    position: relative;
+    z-index: 2;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+  }
+  
+  .services .cards .icon i {
+    color: var(--primary-color);
+  }
+  
+  .services .cards .anim-layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease, right 0.3s ease;
+    z-index: 1;
+  }
+  
+  .services .cards:hover > .anim-layer {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+  
+  .services .cards:hover .icon i,
+  .services .cards:hover .heading h5,
+  .services .cards:hover .para p {
+    color: #fff;
+  }
+  
+  .services .cards .heading {
+    padding-bottom: 8px;
+  }
+  
+  /* services cards end */

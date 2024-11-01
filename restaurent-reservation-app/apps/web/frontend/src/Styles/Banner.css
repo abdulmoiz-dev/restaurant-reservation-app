@@ -1,0 +1,49 @@
+
+/* Banner Start */
+.banner {
+    background-image: url("./../images/banner.jpg");
+    /* opacity: 0.8; */
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* overflow: hidden; */
+  }
+  
+  .banner-content h1 {
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-color-white);
+  }
+  
+  .banner-content p {
+    /* font-size: ; */
+    color: var(--text-color-white);
+  }
+  
+  .banner .banner-content,
+  .banner .banner-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    height: auto;
+  }
+  
+  .banner .banner-img {
+    overflow: hidden;
+  }
+  
+  .banner img {
+    width: 550px;
+    /* height: 550px; */
+    object-fit: contain;
+    animation: imgRotate 50s linear infinite;
+  }
+  
+  @keyframes imgRotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
