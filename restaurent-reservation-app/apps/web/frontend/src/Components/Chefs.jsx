@@ -1,5 +1,5 @@
 import React from 'react';
-import './OurChefs.css'; // Adjust the path as necessary for your CSS
+import '../Styles/Chefs.css'; 
 
 const chefs = [
   {
