@@ -74,3 +74,35 @@ header {
     font-size: 18px;
     color: var(--text-color-white);
   }
+
+  
+/* Mobile Header Start */
+#hamburger {
+    cursor: pointer;
+  }
+  
+  #hamburger-cross {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    -webkit-box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+  }
+  
+  #hamburger-cross i {
+    cursor: pointer;
+    transform: rotate(45deg);
+  }
+  
+  .menus > ul > li::after {
+    background-color: var(--primary-color);
+  }
+  #mobile-menu {
+    transition: 0.6s all ease-in-out;
+    transform: translateX(-100%);
+  }
+  
+  .mobile-nav-logo > .logo > a > h1,
+  .mobile-nav-logo > .logo > a > i {
+    font-size: 24px;
+  }
+  
+  

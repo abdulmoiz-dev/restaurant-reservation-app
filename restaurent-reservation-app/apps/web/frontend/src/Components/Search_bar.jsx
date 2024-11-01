@@ -1,5 +1,5 @@
 import React from 'react';
-import '..Styles/Search_bar.css'; // Make sure to create this CSS file or adjust the path
+import '../Styles/Search_bar.css'; // Make sure to create this CSS file or adjust the path
 
 function SearchBar() {
   const handleClose = () => {
