@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/Reservation.css'; // Adjust the path as necessary for your CSS
+import '../Styles/Reservations.css'; // Adjust the path as necessary for your CSS
 
 const Reservation = () => {
   return (

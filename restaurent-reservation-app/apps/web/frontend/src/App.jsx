@@ -8,10 +8,11 @@ import MenuSection from "./Components/Our_Menu";
 import Testimonials from "./Components/Testimonials";
 import OurChefs from "./Components/Chefs";
 import Reservation from "./Components/Reservations";
-import Services from "./Components/Services";
+import OurServices from "./Components/OurServices";
+import AboutUs from "./Components/About_us";
 import OurGallery from "./Components/Gallery";
 import OurBlog from "./Components/Blog";
-
+import Footer from "./Components/Footer";
 
 function App() {
 
@@ -23,13 +24,15 @@ function App() {
     <ShoppingCart/>
     <Banner/>
     <Services/>
+    <AboutUs/>
     <MenuSection/>
     <Testimonials/>
     <OurChefs/>
     <Reservation/>
-    <Services/>
+    <OurServices/>
     <OurGallery/>
     <OurBlog/>
+    <Footer/>
     </div>
   );
 }

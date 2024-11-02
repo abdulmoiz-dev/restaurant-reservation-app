@@ -1,7 +1,7 @@
 
 /* about us start */
 .about-us {
-    background-image: url("./../images/about-bg.jpg");
+    background-image: url("../assets/images/about-bg.jpg");
     background-position: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
