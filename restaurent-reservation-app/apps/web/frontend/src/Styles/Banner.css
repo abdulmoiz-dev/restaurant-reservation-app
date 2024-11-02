@@ -47,3 +47,53 @@
     }
   }
   
+
+  
+/* book-a-table button start*/
+
+.book-a-table {
+  background-color: var(--primary-color);
+  width: 200px;
+  text-align: center;
+  margin: 10px 0px;
+  border-radius: 50px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.book-a-table > .anim-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  transition: width 0.3s ease, right 0.3s ease;
+}
+
+.book-a-table:hover > .anim-layer {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+.book-a-table:hover a {
+  color: #141214;
+}
+
+.book-a-table a {
+  display: block;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* book-a-table button end */

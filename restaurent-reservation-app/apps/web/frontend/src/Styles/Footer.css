@@ -71,3 +71,22 @@ footer {
       overflow-x: hidden;
     }
   }
+
+
+  
+@media (max-width: 990px) {
+    .shopping-cart-item h3, .shopping-cart-footer p {
+      font-size: 12px;
+    }
+  
+    .footer-checkout a, .footer-shopping a {
+      font-size: 10px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .shopping-cart {
+      width: 100%;
+      height: 92vh;
+    }
+  }

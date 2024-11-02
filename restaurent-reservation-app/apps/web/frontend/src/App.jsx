@@ -13,7 +13,8 @@ import AboutUs from "./Components/About_us";
 import OurGallery from "./Components/Gallery";
 import OurBlog from "./Components/Blog";
 import Footer from "./Components/Footer";
-
+import SubscribeUs from "./Components/Subscribe";
+import '../src/assets/css/style.css';
 function App() {
 
 
@@ -32,6 +33,7 @@ function App() {
     <OurServices/>
     <OurGallery/>
     <OurBlog/>
+    <SubscribeUs/>
     <Footer/>
     </div>
   );
