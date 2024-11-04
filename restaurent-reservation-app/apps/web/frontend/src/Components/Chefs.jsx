@@ -1,11 +1,17 @@
 import React from 'react';
-import '../Styles/Chefs.css'; 
+import '../Styles/Chefs.css';
+
+// Import images directly
+import team1 from '../assets/images/team-1.png';
+import team2 from '../assets/images/team-2.png';
+import team3 from '../assets/images/team-3.png';
+import team4 from '../assets/images/team-4.png';
 
 const chefs = [
   {
     name: "Teresa Doe",
     position: "Head Chef",
-    image: "./assets/images/team-1.png",
+    image: team1,
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com",
     twitter: "https://www.twitter.com",
@@ -14,7 +20,7 @@ const chefs = [
   {
     name: "John Smith",
     position: "Sous Chef",
-    image: "./assets/images/team-2.png",
+    image: team2,
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com",
     twitter: "https://www.twitter.com",
@@ -23,7 +29,7 @@ const chefs = [
   {
     name: "Emma Brown",
     position: "Pastry Chef",
-    image: "./assets/images/team-3.png",
+    image: team3,
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com",
     twitter: "https://www.twitter.com",
@@ -32,7 +38,7 @@ const chefs = [
   {
     name: "James Wilson",
     position: "Line Chef",
-    image: "./assets/images/team-4.png",
+    image: team4,
     facebook: "https://www.facebook.com",
     instagram: "https://www.instagram.com",
     twitter: "https://www.twitter.com",

@@ -1,10 +1,14 @@
 import React from 'react';
 import '../Styles/Subscribe.css'; // Adjust the path as necessary for your CSS
 
+// Import the image
+import subscribeImage from '../assets/images/subscribe-us.png';
+
 const SubscribeUs = () => {
   return (
     <section className="subscribe-us pb-5 mb-5">
-      <img className="d-none d-lg-block" src="./assets/images/subscribe-us.png" alt="" data-aos="fade-down-right" />
+      {/* Use the imported image here */}
+      <img className="d-none d-lg-block" src={subscribeImage} alt="Subscribe Us" data-aos="fade-down-right" />
       <div className="container">
         <div className="row">
           <div className="col-lg-2"></div>

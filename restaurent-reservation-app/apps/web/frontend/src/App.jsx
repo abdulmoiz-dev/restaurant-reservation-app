@@ -23,7 +23,7 @@ function App() {
     <SearchBar/>
     <ShoppingCart/>
     <Banner/>
-    <Services/>
+   
     <AboutUs/>
     <MenuSection/>
     <Testimonials/>

@@ -1,6 +1,11 @@
 import React from 'react';
 import '../Styles/Blog.css'; // Adjust the path as necessary for your CSS
 
+// Import images directly
+import blogImage1 from '../assets/images/blog-grid-1.jpg';
+import blogImage2 from '../assets/images/blog-grid-1-1.jpg';
+import blogImage3 from '../assets/images/blog-grid-1-2.jpg';
+
 const OurBlog = () => {
   return (
     <section className="our-blog pt-5 my-5">
@@ -28,7 +33,7 @@ const OurBlog = () => {
                 </div>
               </div>
               <div className="blog-featured-img">
-                <img className="w-100" src="./assets/images/blog-grid-1.jpg" alt="" />
+                <img className="w-100" src={blogImage1} alt="Blog 1" />
               </div>
               <div className="blog-content px-4 pt-5 pb-4 position-relative">
                 <div className="blog-date">
@@ -36,13 +41,13 @@ const OurBlog = () => {
                   <span className="month">Jun</span>
                 </div>
                 <h3 className="blog-title">
-                  <a href="javascript:void(0)">How To Cook The Spicy Chinese Noodle For Cold Weather</a>
+                  <a href="#!">How To Cook The Spicy Chinese Noodle For Cold Weather</a>
                 </h3>
                 <p className="blog-description">
                   Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <div className="blog-readmore text-end">
-                  <a className="text-black text-decoration-none" href="javascript:void(0)">
+                  <a className="text-black text-decoration-none" href="#!">
                     Read More 
                     <i className="fa fa-angle-double-right"></i>
                   </a>
@@ -67,7 +72,7 @@ const OurBlog = () => {
                 </div>
               </div>
               <div className="blog-featured-img">
-                <img className="w-100" src="./assets/images/blog-grid-1-1.jpg" alt="" />
+                <img className="w-100" src={blogImage2} alt="Blog 2" />
               </div>
               <div className="blog-content px-4 pt-5 pb-4 position-relative">
                 <div className="blog-date">
@@ -75,13 +80,13 @@ const OurBlog = () => {
                   <span className="month">Jun</span>
                 </div>
                 <h3 className="blog-title">
-                  <a href="javascript:void(0)">How To Cook The Spicy Chinese Noodle For Cold Weather</a>
+                  <a href="#!">How To Cook The Spicy Chinese Noodle For Cold Weather</a>
                 </h3>
                 <p className="blog-description">
                   Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <div className="blog-readmore text-end">
-                  <a className="text-black text-decoration-none" href="javascript:void(0)">
+                  <a className="text-black text-decoration-none" href="#!">
                     Read More 
                     <i className="fa fa-angle-double-right"></i>
                   </a>
@@ -106,7 +111,7 @@ const OurBlog = () => {
                 </div>
               </div>
               <div className="blog-featured-img">
-                <img className="w-100" src="./assets/images/blog-grid-1-2.jpg" alt="" />
+                <img className="w-100" src={blogImage3} alt="Blog 3" />
               </div>
               <div className="blog-content px-4 pt-5 pb-4 position-relative">
                 <div className="blog-date">
@@ -114,13 +119,13 @@ const OurBlog = () => {
                   <span className="month">Jun</span>
                 </div>
                 <h3 className="blog-title">
-                  <a href="javascript:void(0)">How To Cook The Spicy Chinese Noodle For Cold Weather</a>
+                  <a href="#!">How To Cook The Spicy Chinese Noodle For Cold Weather</a>
                 </h3>
                 <p className="blog-description">
                   Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <div className="blog-readmore text-end">
-                  <a className="text-black text-decoration-none" href="javascript:void(0)">
+                  <a className="text-black text-decoration-none" href="#!">
                     Read More 
                     <i className="fa fa-angle-double-right"></i>
                   </a>

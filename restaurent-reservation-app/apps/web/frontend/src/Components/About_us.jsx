@@ -1,5 +1,11 @@
 import React from 'react';
-import '../Styles/About_us.css'; // Ensure to create this CSS file or adjust the path
+import '../Styles/About_us.css'; // Ensure this CSS file exists and is correctly styled
+
+// Import images from src/assets/images
+import about1 from '../assets/images/about-1.jpg';
+import about2 from '../assets/images/about-2.jpg';
+import about3 from '../assets/images/about-3.jpg';
+import about4 from '../assets/images/about-4.jpg';
 
 function AboutUs() {
   return (
@@ -9,16 +15,16 @@ function AboutUs() {
           <div className="col-lg-6 about-img-box">
             <div className="row g-3">
               <div className="col-6" data-aos="fade-right">
-                <img className="img-fluid rounded w-100" src="./assets/images/about-1.jpg" alt="About Us 1" />
+                <img className="img-fluid rounded w-100" src={about1} alt="About Us 1" />
               </div>
               <div className="col-6 text-right" data-aos="fade-down">
-                <img className="img-fluid rounded w-75" src="./assets/images/about-2.jpg" alt="About Us 2" />
+                <img className="img-fluid rounded w-75" src={about2} alt="About Us 2" />
               </div>
               <div className="col-6 text-end" data-aos="fade-right">
-                <img className="img-fluid rounded w-75" src="./assets/images/about-3.jpg" alt="About Us 3" />
+                <img className="img-fluid rounded w-75" src={about3} alt="About Us 3" />
               </div>
               <div className="col-6 text-end" data-aos="fade-up">
-                <img className="img-fluid rounded w-100" src="./assets/images/about-4.jpg" alt="About Us 4" />
+                <img className="img-fluid rounded w-100" src={about4} alt="About Us 4" />
               </div>
             </div>
           </div>

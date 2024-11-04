@@ -3,6 +3,10 @@ import '../Styles/Our_Menu.css';
 import 'aos/dist/aos.css'; 
 import AOS from 'aos'; 
 
+// Import images from assets folder
+import dessertImage from '../assets/images/menu-slider-dessert.png';
+// Repeat imports for each menu image if necessary
+
 const MenuSection = () => {
   // Initialize AOS
   React.useEffect(() => {
@@ -33,15 +37,14 @@ const MenuSection = () => {
           </div>
         </div>
         <div id="our-menus" className="slider" data-aos="fade-up">
-          {/* You can create an array of menu items to map through */}
           {[
             {
-              image: './assets/images/menu-slider-dessert.png',
+              image: dessertImage,
               name: "The Cracker Barrel's Country Boy Breakfast",
               description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum',
               price: 25.0,
             },
-            // Repeat for other items...
+            // Add additional items here
           ].map((menuItem, index) => (
             <div key={index}>
               <div className="row my-5 py-3">

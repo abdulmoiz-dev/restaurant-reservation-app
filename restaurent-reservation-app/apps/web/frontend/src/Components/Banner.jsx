@@ -1,5 +1,6 @@
 import React from 'react';
-import '../Styles/Banner.css'; // Make sure to create this CSS file or adjust the path
+import '../Styles/Banner.css';
+import bannerImage from '../assets/images/banner-img.png';
 
 function Banner() {
   return (
@@ -17,7 +18,7 @@ function Banner() {
             </div>
           </div>
           <div className="col-md-6 banner-img" data-aos="fade-left" data-aos-delay="3000">
-            <img className="img img-fluid mt-5 mt-lg-0" src="./assets/images/banner-img.png" alt="" />
+            <img className="img img-fluid mt-5 mt-lg-0" src={bannerImage} alt="Banner" />
           </div>
         </div>
       </div>
