@@ -1,8 +1,0 @@
-{
-  "name": "restaurant-reservation-app",
-  "version": "1.0.0",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
-}
