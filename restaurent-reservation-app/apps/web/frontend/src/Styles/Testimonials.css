@@ -1,7 +1,11 @@
 
 /* testimonial start */
 .testimonials {
-    background-image: url("../assets/images/testi-bg.jpg");
+
+  background-image: url('../assets/images/testi-bg.jpg');
+
+
+
     /* background-color: black; */
     background-position: cover;
     background-repeat: no-repeat;
