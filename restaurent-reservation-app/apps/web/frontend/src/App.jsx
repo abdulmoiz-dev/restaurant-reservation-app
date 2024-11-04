@@ -13,6 +13,7 @@ import OurGallery from "./Components/Gallery";
 import OurBlog from "./Components/Blog";
 import Footer from "./Components/Footer";
 import SubscribeUs from "./Components/Subscribe";
+import Services from "./Components/Services";
 import '../src/assets/css/style.css';
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
     <SearchBar/>
     <ShoppingCart/>
     <Banner/>
-   
+   <Services/>
     <AboutUs/>
     <MenuSection/>
     <Testimonials/>
