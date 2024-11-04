@@ -103,68 +103,6 @@
     background-color: var(--primary-color);
   }
   
-  .footer-checkout, .footer-shopping {
-    background-color: var(--primary-color);
-    width: 200px;
-    text-align: center;
-    margin: 10px 0px;
-    border-radius: 50px;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    cursor: pointer;
-    border: 2px solid var(--primary-color);
-  }
-  
-  .footer-shopping {
-    background-color: transparent;
-  }
-  
-  .footer-checkout > .anim-layer, .footer-shopping > .anim-layer{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 100%;
-    background-color: white;
-    transition: width 0.3s ease, right 0.3s ease;
-  }
-  
-  .footer-shopping > .anim-layer {
-    background-color: var(--primary-color);
-  }
-  
-  .footer-checkout:hover > .anim-layer, .footer-shopping:hover > .anim-layer {
-    width: 100%;
-    left: 0;
-    right: auto;
-  }
-  
-  .footer-checkout:hover a, .footer-shopping:hover a {
-    color: #141214;
-  }
-  
-  .footer-shopping:hover a {
-    color: var(--text-color-white);
-  }
-  
-  .footer-checkout a, .footer-shopping a {
-    display: block;
-    font-size: 14px;
-    font-family: "Nunito", sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 14px 24px;
-    color: white;
-    text-decoration: none;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .footer-shopping a {
-    color: black;
-  }
-  
   @media (max-width: 990px) {
     .shopping-cart-item h3, .shopping-cart-footer p {
       font-size: 12px;
