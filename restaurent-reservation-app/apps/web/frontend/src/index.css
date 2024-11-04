@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 /* Global Styles */
->>>>>>> 4cf78863afb769952ad8869ea0205402e0c3918e
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,8 +12,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-<<<<<<< HEAD
-=======
 
 /* Header Start */
 header {
@@ -338,4 +333,6 @@ header.scrolled {
 }
 
 /* Shopping Cart End */
->>>>>>> 4cf78863afb769952ad8869ea0205402e0c3918e
+
+
+

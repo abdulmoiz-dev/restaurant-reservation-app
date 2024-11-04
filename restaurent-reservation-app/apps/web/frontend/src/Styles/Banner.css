@@ -1,7 +1,9 @@
 
 /* Banner Start */
 .banner {
-    background-image: url("./../images/banner.jpg");
+    background-image: url("../assets/images/banner.jpg");
+
+  /* G:\Semester-5\Database Systems\proj_db\restaurent-reservation-app\apps\web\frontend\src\assets\images\banner.jpg */
     /* opacity: 0.8; */
     width: 100%;
     height: auto;
