@@ -9,7 +9,7 @@ DROP SCHEMA IF EXISTS `foodBuddy` ;
 -- -----------------------------------------------------
 -- Schema foodBuddy
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `foodBuddy` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+CREATE SCHEMA IF NOT EXISTS `foodBuddy`  ;
 USE `foodBuddy` ;
 
 -- -----------------------------------------------------
@@ -25,6 +25,23 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`restaurant` (
   `opening_hours` VARCHAR(100) NULL DEFAULT NULL,
   `cuisine_type` VARCHAR(100) NULL DEFAULT NULL,
   PRIMARY KEY (`restaurant_id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- Table `foodBuddy`.`admin`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `foodBuddy`.`admin` ;
+
+CREATE TABLE IF NOT EXISTS `foodBuddy`.`admin` (
+  `admin_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `restaurant_id` INT NULL DEFAULT NULL,
+  PRIMARY KEY (`admin_id`),
+  UNIQUE INDEX `email` (`email` ASC) VISIBLE,
+  INDEX `restaurant_id` (`restaurant_id` ASC) VISIBLE,
+  CONSTRAINT `admin_ibfk_1`
+    FOREIGN KEY (`restaurant_id`)
+    REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
+    ON DELETE CASCADE)
+
