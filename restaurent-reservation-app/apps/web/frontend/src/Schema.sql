@@ -198,3 +198,23 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`notification` (
     FOREIGN KEY (`reservation_id`)
     REFERENCES `foodBuddy`.`reservation` (`reservation_id`)
     ON DELETE CASCADE)
+
+
+
+-- -----------------------------------------------------
+-- Table `foodBuddy`.`payment`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `foodBuddy`.`payment` ;
+
+CREATE TABLE IF NOT EXISTS `foodBuddy`.`payment` (
+  `payment_id` INT NOT NULL AUTO_INCREMENT,
+  `reservation_id` INT NULL DEFAULT NULL,
+  `amount` DECIMAL(10,2) NOT NULL,
+  `payment_date` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `payment_status` ENUM('pending', 'completed', 'failed') NULL DEFAULT 'pending',
+  PRIMARY KEY (`payment_id`),
+  INDEX `reservation_id` (`reservation_id` ASC) VISIBLE,
+  CONSTRAINT `payment_ibfk_1`
+    FOREIGN KEY (`reservation_id`)
+    REFERENCES `foodBuddy`.`reservation` (`reservation_id`)
+    ON DELETE CASCADE)
