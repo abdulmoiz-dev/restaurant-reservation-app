@@ -145,3 +145,31 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`restauranttable` (
     FOREIGN KEY (`branch_id`)
     REFERENCES `foodBuddy`.`branch` (`branch_id`)
     ON DELETE CASCADE)
+
+
+
+
+-- -----------------------------------------------------
+-- Table `foodBuddy`.`reservation`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `foodBuddy`.`reservation` ;
+
+CREATE TABLE IF NOT EXISTS `foodBuddy`.`reservation` (
+  `reservation_id` INT NOT NULL AUTO_INCREMENT,
+  `customer_id` INT NULL DEFAULT NULL,
+  `table_id` INT NULL DEFAULT NULL,
+  `reservation_time` DATETIME NOT NULL,
+  `status` ENUM('pending', 'confirmed', 'cancelled') NULL DEFAULT 'pending',
+  `notification_sent` TINYINT(1) NULL DEFAULT '0',
+  `price` DECIMAL(10,2) NULL DEFAULT NULL,
+  PRIMARY KEY (`reservation_id`),
+  INDEX `customer_id` (`customer_id` ASC) VISIBLE,
+  INDEX `table_id` (`table_id` ASC) VISIBLE,
+  CONSTRAINT `reservation_ibfk_1`
+    FOREIGN KEY (`customer_id`)
+    REFERENCES `foodBuddy`.`customer` (`customer_id`)
+    ON DELETE CASCADE,
+  CONSTRAINT `reservation_ibfk_2`
+    FOREIGN KEY (`table_id`)
+    REFERENCES `foodBuddy`.`restauranttable` (`table_id`)
+    ON DELETE CASCADE)
