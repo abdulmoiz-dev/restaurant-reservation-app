@@ -86,3 +86,21 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`customer` (
 
 
 
+
+-- -----------------------------------------------------
+-- Table `foodBuddy`.`loyaltyprogram`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `foodBuddy`.`loyaltyprogram` ;
+
+CREATE TABLE IF NOT EXISTS `foodBuddy`.`loyaltyprogram` (
+  `loyalty_id` INT NOT NULL AUTO_INCREMENT,
+  `customer_id` INT NULL DEFAULT NULL,
+  `points_earned` INT NULL DEFAULT NULL,
+  `reward_claimed` TINYINT(1) NULL DEFAULT '0',
+  `reward_description` VARCHAR(255) NULL DEFAULT NULL,
+  PRIMARY KEY (`loyalty_id`),
+  INDEX `customer_id` (`customer_id` ASC) VISIBLE,
+  CONSTRAINT `loyaltyprogram_ibfk_1`
+    FOREIGN KEY (`customer_id`)
+    REFERENCES `foodBuddy`.`customer` (`customer_id`)
+    ON DELETE CASCADE)
