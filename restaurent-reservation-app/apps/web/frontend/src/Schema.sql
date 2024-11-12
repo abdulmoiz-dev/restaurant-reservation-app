@@ -45,3 +45,26 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`admin` (
     REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
     ON DELETE CASCADE)
 
+
+
+    
+-- -----------------------------------------------------
+-- Table `foodBuddy`.`branch`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `foodBuddy`.`branch` ;
+
+CREATE TABLE IF NOT EXISTS `foodBuddy`.`branch` (
+  `branch_id` INT NOT NULL AUTO_INCREMENT,
+  `restaurant_id` INT NULL DEFAULT NULL,
+  `branch_name` VARCHAR(100) NULL DEFAULT NULL,
+  `branch_location` VARCHAR(255) NULL DEFAULT NULL,
+  `branch_phone_number` VARCHAR(15) NULL DEFAULT NULL,
+  PRIMARY KEY (`branch_id`),
+  INDEX `restaurant_id` (`restaurant_id` ASC) VISIBLE,
+  CONSTRAINT `branch_ibfk_1`
+    FOREIGN KEY (`restaurant_id`)
+    REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
+    ON DELETE CASCADE)
+
+
+
