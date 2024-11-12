@@ -218,3 +218,27 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`payment` (
     FOREIGN KEY (`reservation_id`)
     REFERENCES `foodBuddy`.`reservation` (`reservation_id`)
     ON DELETE CASCADE)
+
+
+
+-- -----------------------------------------------------
+-- Table `foodBuddy`.`preferences`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `foodBuddy`.`preferences` ;
+
+CREATE TABLE IF NOT EXISTS `foodBuddy`.`preferences` (
+  `preference_id` INT NOT NULL AUTO_INCREMENT,
+  `customer_id` INT NULL DEFAULT NULL,
+  `favorite_restaurant_id` INT NULL DEFAULT NULL,
+  `preferred_seating_area` VARCHAR(100) NULL DEFAULT NULL,
+  PRIMARY KEY (`preference_id`),
+  INDEX `customer_id` (`customer_id` ASC) VISIBLE,
+  INDEX `favorite_restaurant_id` (`favorite_restaurant_id` ASC) VISIBLE,
+  CONSTRAINT `preferences_ibfk_1`
+    FOREIGN KEY (`customer_id`)
+    REFERENCES `foodBuddy`.`customer` (`customer_id`)
+    ON DELETE CASCADE,
+  CONSTRAINT `preferences_ibfk_2`
+    FOREIGN KEY (`favorite_restaurant_id`)
+    REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
+    ON DELETE CASCADE)
