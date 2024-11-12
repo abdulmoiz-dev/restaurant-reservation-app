@@ -68,3 +68,21 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`branch` (
 
 
 
+-- -----------------------------------------------------
+-- Table `foodBuddy`.`customer`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `foodBuddy`.`customer` ;
+
+CREATE TABLE IF NOT EXISTS `foodBuddy`.`customer` (
+  `customer_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `phone_number` VARCHAR(15) NULL DEFAULT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `loyalty_points` INT NULL DEFAULT '0',
+  PRIMARY KEY (`customer_id`),
+  UNIQUE INDEX `email` (`email` ASC) VISIBLE)
+
+
+
