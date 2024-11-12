@@ -104,3 +104,24 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`loyaltyprogram` (
     FOREIGN KEY (`customer_id`)
     REFERENCES `foodBuddy`.`customer` (`customer_id`)
     ON DELETE CASCADE)
+    
+
+
+-- -----------------------------------------------------
+-- Table `foodBuddy`.`menu`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `foodBuddy`.`menu` ;
+
+CREATE TABLE IF NOT EXISTS `foodBuddy`.`menu` (
+  `menu_id` INT NOT NULL AUTO_INCREMENT,
+  `restaurant_id` INT NULL DEFAULT NULL,
+  `item_name` VARCHAR(100) NOT NULL,
+  `description` TEXT NULL DEFAULT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
+  `availability` TINYINT(1) NULL DEFAULT '1',
+  PRIMARY KEY (`menu_id`),
+  INDEX `restaurant_id` (`restaurant_id` ASC) VISIBLE,
+  CONSTRAINT `menu_ibfk_1`
+    FOREIGN KEY (`restaurant_id`)
+    REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
+    ON DELETE CASCADE)
