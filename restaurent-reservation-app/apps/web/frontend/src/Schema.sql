@@ -173,3 +173,28 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`reservation` (
     FOREIGN KEY (`table_id`)
     REFERENCES `foodBuddy`.`restauranttable` (`table_id`)
     ON DELETE CASCADE)
+
+
+
+-- -----------------------------------------------------
+-- Table `foodBuddy`.`notification`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `foodBuddy`.`notification` ;
+
+CREATE TABLE IF NOT EXISTS `foodBuddy`.`notification` (
+  `notification_id` INT NOT NULL AUTO_INCREMENT,
+  `customer_id` INT NULL DEFAULT NULL,
+  `reservation_id` INT NULL DEFAULT NULL,
+  `message` TEXT NULL DEFAULT NULL,
+  `sent_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`notification_id`),
+  INDEX `customer_id` (`customer_id` ASC) VISIBLE,
+  INDEX `reservation_id` (`reservation_id` ASC) VISIBLE,
+  CONSTRAINT `notification_ibfk_1`
+    FOREIGN KEY (`customer_id`)
+    REFERENCES `foodBuddy`.`customer` (`customer_id`)
+    ON DELETE CASCADE,
+  CONSTRAINT `notification_ibfk_2`
+    FOREIGN KEY (`reservation_id`)
+    REFERENCES `foodBuddy`.`reservation` (`reservation_id`)
+    ON DELETE CASCADE)
