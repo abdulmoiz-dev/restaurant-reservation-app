@@ -78,5 +78,89 @@ INSERT INTO `foodBuddy`.`menu` (`restaurant_id`, `item_name`, `description`, `pr
 (8, 'Grilled Chicken', 'Marinated grilled chicken', 300.00, 1),
 (9, 'Mutton Karahi', 'Spicy mutton curry', 700.00, 1),
 (10, 'Tandoori Naan', 'Baked flatbread', 30.00, 1);
-
+ 
 -- (Additional inserts for other tables like `restauranttable`, `reservation`, `notification`, etc., can follow similarly based on the table structure and required sample data)
+
+-- Insert data into `restauranttable` table
+INSERT INTO `foodBuddy`.`restauranttable` (`restaurant_id`, `table_number`, `seating_capacity`, `is_available`) VALUES
+(1, 1, 4, 1),
+(1, 2, 2, 1),
+(2, 1, 6, 1),
+(2, 2, 4, 0),
+(3, 1, 8, 1),
+(3, 2, 4, 1),
+(4, 1, 2, 1),
+(5, 1, 4, 0),
+(6, 1, 6, 1),
+(7, 1, 4, 1);
+
+
+-- Insert data into `reservation` table
+INSERT INTO `foodBuddy`.`reservation` (`customer_id`, `restauranttable_id`, `reservation_time`, `reservation_date`, `status`) VALUES
+(1, 1, '18:00', '2024-11-20', 'Confirmed'),
+(2, 3, '19:00', '2024-11-20', 'Pending'),
+(3, 5, '12:00', '2024-11-21', 'Cancelled'),
+(4, 7, '20:00', '2024-11-21', 'Confirmed'),
+(5, 2, '13:00', '2024-11-22', 'Confirmed'),
+(6, 4, '18:30', '2024-11-22', 'Pending'),
+(7, 6, '19:30', '2024-11-22', 'Confirmed'),
+(8, 8, '17:00', '2024-11-23', 'Cancelled'),
+(9, 9, '14:00', '2024-11-23', 'Confirmed'),
+(10, 10, '20:30', '2024-11-23', 'Pending');
+
+
+-- Insert data into `notification` table
+INSERT INTO `foodBuddy`.`notification` (`customer_id`, `message`, `is_read`, `sent_date`) VALUES
+(1, 'Your reservation at Karachi Darbar is confirmed!', 0, '2024-11-19'),
+(2, 'Reservation pending at Lahore Tikka House', 0, '2024-11-19'),
+(3, 'Your reservation has been cancelled', 1, '2024-11-18'),
+(4, 'Table reserved at Peshawar Delight', 1, '2024-11-19'),
+(5, 'Reservation confirmed at Multan Foods', 0, '2024-11-19'),
+(6, 'Your table reservation is pending confirmation', 0, '2024-11-18'),
+(7, 'Reservation successful at Faisalabad Feast', 1, '2024-11-17'),
+(8, 'Reservation cancelled at Hyderabad House', 1, '2024-11-18'),
+(9, 'Table confirmed at Quetta Grill', 0, '2024-11-19'),
+(10, 'Reservation pending at Gujranwala Dine', 0, '2024-11-19');
+
+
+-- Insert data into `payment` table
+INSERT INTO `foodBuddy`.`payment` (`reservation_id`, `amount`, `payment_status`) VALUES
+(1, 45.00, 'completed'),
+(2, 30.00, 'pending'),
+(3, 50.50, 'failed'),
+(4, 60.00, 'completed'),
+(5, 25.75, 'completed'),
+(6, 40.00, 'pending'),
+(7, 75.00, 'completed'),
+(8, 20.00, 'failed'),
+(9, 55.00, 'completed'),
+(10, 35.00, 'pending');
+
+
+-- Insert data into `preferences` table
+INSERT INTO `foodBuddy`.`preferences` (`customer_id`, `favorite_restaurant_id`, `preferred_seating_area`) VALUES
+(1, 2, 'Window Side'),
+(2, 3, 'Patio'),
+(3, 4, 'Quiet Zone'),
+(4, 1, 'Near Entrance'),
+(5, 5, 'Corner Booth'),
+(6, 6, 'Near Window'),
+(7, 7, 'Patio'),
+(8, 8, 'Center Area'),
+(9, 9, 'Near Bar'),
+(10, 10, 'Outdoor');
+
+
+-- Insert data into `review` table
+INSERT INTO `foodBuddy`.`review` (`customer_id`, `restaurant_id`, `rating`, `comment`) VALUES
+(1, 1, 5, 'Amazing food and great ambiance.'),
+(2, 2, 4, 'Good service, but a bit pricey.'),
+(3, 3, 3, 'Average experience, could improve on cleanliness.'),
+(4, 4, 5, 'Wonderful atmosphere and delicious meals!'),
+(5, 5, 2, 'Food was cold and service was slow.'),
+(6, 6, 4, 'Great place for family dinner.'),
+(7, 7, 5, 'Highly recommended for their variety of dishes.'),
+(8, 8, 3, 'Decent place, but noisy during peak hours.'),
+(9, 9, 4, 'Good value for money.'),
+(10, 10, 2, 'Not satisfied with the food quality.');
+
