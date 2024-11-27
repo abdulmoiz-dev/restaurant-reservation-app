@@ -1,42 +1,22 @@
-import React from "react";
-import Header from "./Components/Header";
-import SearchBar from "./Components/Search_bar";
-import ShoppingCart from "./Components/shopping_cart";
-import Banner from "./Components/Banner";
-import MenuSection from "./Components/Our_Menu";
-import Testimonials from "./Components/Testimonials";
-import OurChefs from "./Components/Chefs";
-import Reservation from "./Components/Reservations";
-import OurServices from "./Components/OurServices";
-import AboutUs from "./Components/About_us";
-import OurGallery from "./Components/Gallery";
-import OurBlog from "./Components/Blog";
-import Footer from "./Components/Footer";
-import SubscribeUs from "./Components/Subscribe";
-import Services from "./Components/Services";
-import '../src/assets/css/style.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home'; // Your existing Home page component
+import Login from './Pages/Login'; // New Login page component
+import PageNotFound from './Pages/PageNotFound'; // New 404 page component
+
 function App() {
-
-
   return (
-    <div>
-    <Header/>
-    <SearchBar/>
-    <ShoppingCart/>
-    <Banner/>
-   <Services/>
-    <AboutUs/>
-    <MenuSection/>
-    <Testimonials/>
-    <OurChefs/>
-    <Reservation/>
-    <OurServices/>
-    <OurGallery/>
-    <OurBlog/>
-    <SubscribeUs/>
-    <Footer/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </Router>
+
+    
   );
 }
 
-export default App
+export default App;
