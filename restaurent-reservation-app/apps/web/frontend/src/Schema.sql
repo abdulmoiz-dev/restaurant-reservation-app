@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`restaurant` (
   `phone_number` VARCHAR(15) NULL DEFAULT NULL,
   `opening_hours` VARCHAR(100) NULL DEFAULT NULL,
   `cuisine_type` VARCHAR(100) NULL DEFAULT NULL,
-  PRIMARY KEY (`restaurant_id`))
+  PRIMARY KEY (`restaurant_id`));
 
 
 -- Table `foodBuddy`.`admin`
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`admin` (
   CONSTRAINT `admin_ibfk_1`
     FOREIGN KEY (`restaurant_id`)
     REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
 
 
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`branch` (
   CONSTRAINT `branch_ibfk_1`
     FOREIGN KEY (`restaurant_id`)
     REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
 
 
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`customer` (
   `created_at` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `loyalty_points` INT NULL DEFAULT '0',
   PRIMARY KEY (`customer_id`),
-  UNIQUE INDEX `email` (`email` ASC) VISIBLE)
+  UNIQUE INDEX `email` (`email` ASC) VISIBLE);
 
 
 
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`loyaltyprogram` (
   CONSTRAINT `loyaltyprogram_ibfk_1`
     FOREIGN KEY (`customer_id`)
     REFERENCES `foodBuddy`.`customer` (`customer_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
     
 
 
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`menu` (
   CONSTRAINT `menu_ibfk_1`
     FOREIGN KEY (`restaurant_id`)
     REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
 
 
 -- -----------------------------------------------------
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`restauranttable` (
   CONSTRAINT `restauranttable_ibfk_1`
     FOREIGN KEY (`branch_id`)
     REFERENCES `foodBuddy`.`branch` (`branch_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
 
 
 
@@ -172,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`reservation` (
   CONSTRAINT `reservation_ibfk_2`
     FOREIGN KEY (`table_id`)
     REFERENCES `foodBuddy`.`restauranttable` (`table_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
 
 
 
@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`notification` (
   CONSTRAINT `notification_ibfk_2`
     FOREIGN KEY (`reservation_id`)
     REFERENCES `foodBuddy`.`reservation` (`reservation_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
 
 
 
@@ -217,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`payment` (
   CONSTRAINT `payment_ibfk_1`
     FOREIGN KEY (`reservation_id`)
     REFERENCES `foodBuddy`.`reservation` (`reservation_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
 
 
 
@@ -241,7 +241,7 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`preferences` (
   CONSTRAINT `preferences_ibfk_2`
     FOREIGN KEY (`favorite_restaurant_id`)
     REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
 
     
 -- -----------------------------------------------------
@@ -266,4 +266,4 @@ CREATE TABLE IF NOT EXISTS `foodBuddy`.`review` (
   CONSTRAINT `review_ibfk_2`
     FOREIGN KEY (`restaurant_id`)
     REFERENCES `foodBuddy`.`restaurant` (`restaurant_id`)
-    ON DELETE CASCADE)
+    ON DELETE CASCADE);
