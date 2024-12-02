@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const Login = ({ onSwitch }) => {
-  const [formData, setFormData] = useState({ email: '', password: '' });
+const Signup = ({ onSwitch }) => {
+  const [formData, setFormData] = useState({ email: '', password: '', name: '' });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
 
@@ -12,7 +12,7 @@ const Login = ({ onSwitch }) => {
   };
 
   const validateForm = () => {
-    if (!formData.email || !formData.password) {
+    if (!formData.email || !formData.password || !formData.name) {
       setError('Please fill in all required fields');
       return false;
     }
@@ -34,7 +34,7 @@ const Login = ({ onSwitch }) => {
 
     if (validateForm()) {
       try {
-        const response = await fetch('http://localhost:3001/login', {
+        const response = await fetch('http://localhost:3001/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
@@ -44,7 +44,8 @@ const Login = ({ onSwitch }) => {
 
         if (response.ok) {
           setSuccess(true);
-          window.location.href = `${window.location.origin}/home`;
+          setError('Account created successfully! Please log in.');
+          onSwitch(); // Switch to login
         } else {
           setError(data.message || 'Something went wrong. Please try again.');
         }
@@ -54,12 +55,32 @@ const Login = ({ onSwitch }) => {
     }
   };
 
-  
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="text-center mb-4">Welcome Back! 👋</h2>
+      <h2 className="text-center mb-4">Create Account ✨</h2>
       {error && <div className="alert alert-danger">{error}</div>}
-      {success && <div className="alert alert-success">Welcome back! Redirecting...</div>}
+      {success && <div className="alert alert-success">Account created successfully!</div>}
+      <div className="mb-3">
+        <label>Full Name</label>
+        <input
+          type="text"
+          className="form-control"
+          name="name"
+          placeholder="John Doe"
+          value={formData.name}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="mb-3">
+        <label>Phone Number</label>
+        <input
+          type="Ph#"
+          className="form-control"
+          name="ph#"
+          value={formData.phone_number}
+          onChange={handleInputChange}
+        />
+      </div>
       <div className="mb-3">
         <label>Email Address</label>
         <input
@@ -81,17 +102,16 @@ const Login = ({ onSwitch }) => {
           value={formData.password}
           onChange={handleInputChange}
         />
-        
       </div>
-      <button type="submit" className="btn btn-primary w-100">Sign In</button>
+      <button type="submit" className="btn btn-primary w-100">Create Account</button>
       <div className="text-center mt-3">
-        Don't have an account?{' '}
+        Already have an account?{' '}
         <button type="button" className="btn btn-link" onClick={onSwitch}>
-          Sign Up
+          Sign In
         </button>
       </div>
     </form>
   );
 };
 
-export default Login;
+export default Signup;

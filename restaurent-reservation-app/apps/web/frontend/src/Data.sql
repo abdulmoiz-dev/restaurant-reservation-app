@@ -1,5 +1,5 @@
 
-
+use foodBuddy;
 -- Insert data into `restaurant` table
 INSERT INTO `foodBuddy`.`restaurant` (`name`, `location`, `phone_number`, `opening_hours`, `cuisine_type`) VALUES
 ('Karachi Darbar', 'Karachi', '021-1234567', '09:00-23:00', 'Pakistani'),
@@ -13,7 +13,7 @@ INSERT INTO `foodBuddy`.`restaurant` (`name`, `location`, `phone_number`, `openi
 ('Quetta Grill', 'Quetta', '081-2233445', '08:00-22:00', 'BBQ'),
 ('Gujranwala Dine', 'Gujranwala', '055-3344556', '10:00-22:00', 'Fast Food');
 
--- Insert data into `admin` table
+-- -- Insert data into `admin` table
 INSERT INTO `foodBuddy`.`admin` (`name`, `email`, `password`, `restaurant_id`) VALUES
 ('Ahmed Ali', 'ahmed.ali@foodbuddy.pk', 'password1', 1),
 ('Sara Khan', 'sara.khan@foodbuddy.pk', 'password2', 2),
@@ -26,7 +26,7 @@ INSERT INTO `foodBuddy`.`admin` (`name`, `email`, `password`, `restaurant_id`) V
 ('Mehwish Tariq', 'mehwish.tariq@foodbuddy.pk', 'password9', 9),
 ('Shahzaib Iqbal', 'shahzaib.iqbal@foodbuddy.pk', 'password10', 10);
 
--- Insert data into `branch` table
+-- -- Insert data into `branch` table
 INSERT INTO `foodBuddy`.`branch` (`restaurant_id`, `branch_name`, `branch_location`, `branch_phone_number`) VALUES
 (1, 'Karachi Darbar Branch 1', 'Karachi - Clifton', '021-1234567'),
 (1, 'Karachi Darbar Branch 2', 'Karachi - Gulshan', '021-2345678'),
@@ -39,7 +39,7 @@ INSERT INTO `foodBuddy`.`branch` (`restaurant_id`, `branch_name`, `branch_locati
 (7, 'Faisalabad Feast Central', 'Faisalabad - D-Ground', '041-1122334'),
 (8, 'Hyderabad House East', 'Hyderabad - Qasimabad', '022-1122334');
 
--- Insert data into `customer` table
+-- -- Insert data into `customer` table
 INSERT INTO `foodBuddy`.`customer` (`name`, `email`, `password`, `phone_number`, `loyalty_points`) VALUES
 ('Ali Raza', 'ali.raza@gmail.com', 'custpassword1', '0300-1234567', 50),
 ('Fatima Noor', 'fatima.noor@gmail.com', 'custpassword2', '0311-2345678', 20),
@@ -52,7 +52,7 @@ INSERT INTO `foodBuddy`.`customer` (`name`, `email`, `password`, `phone_number`,
 ('Alina Hashmi', 'alina.hashmi@gmail.com', 'custpassword9', '0345-9012345', 80),
 ('Yasir Iqbal', 'yasir.iqbal@gmail.com', 'custpassword10', '0302-0123456', 25);
 
--- Insert data into `loyaltyprogram` table
+-- -- Insert data into `loyaltyprogram` table
 INSERT INTO `foodBuddy`.`loyaltyprogram` (`customer_id`, `points_earned`, `reward_claimed`, `reward_description`) VALUES
 (1, 50, 1, 'Free dessert'),
 (2, 20, 0, '5% discount'),
@@ -65,7 +65,7 @@ INSERT INTO `foodBuddy`.`loyaltyprogram` (`customer_id`, `points_earned`, `rewar
 (9, 80, 1, 'Free dessert'),
 (10, 25, 0, '5% discount');
 
--- Insert data into `menu` table
+-- -- Insert data into `menu` table
 INSERT INTO `foodBuddy`.`menu` (`restaurant_id`, `item_name`, `description`, `price`, `availability`) VALUES
 (1, 'Biryani', 'Spicy rice with chicken', 300.00, 1),
 (1, 'Chicken Karahi', 'Traditional chicken curry', 500.00, 1),
@@ -79,9 +79,9 @@ INSERT INTO `foodBuddy`.`menu` (`restaurant_id`, `item_name`, `description`, `pr
 (9, 'Mutton Karahi', 'Spicy mutton curry', 700.00, 1),
 (10, 'Tandoori Naan', 'Baked flatbread', 30.00, 1);
  
--- (Additional inserts for other tables like `restauranttable`, `reservation`, `notification`, etc., can follow similarly based on the table structure and required sample data)
+-- -- (Additional inserts for other tables like `restauranttable`, `reservation`, `notification`, etc., can follow similarly based on the table structure and required sample data)
 
--- Insert data into `restauranttable` table
+-- -- Insert data into `restauranttable` table
 INSERT INTO `foodBuddy`.`restauranttable` (`restaurant_id`, `table_number`, `seating_capacity`, `is_available`) VALUES
 (1, 1, 4, 1),
 (1, 2, 2, 1),
@@ -95,7 +95,7 @@ INSERT INTO `foodBuddy`.`restauranttable` (`restaurant_id`, `table_number`, `sea
 (7, 1, 4, 1);
 
 
--- Insert data into `reservation` table
+-- -- Insert data into `reservation` table
 INSERT INTO `foodBuddy`.`reservation` (`customer_id`, `restauranttable_id`, `reservation_time`, `reservation_date`, `status`) VALUES
 (1, 1, '18:00', '2024-11-20', 'Confirmed'),
 (2, 3, '19:00', '2024-11-20', 'Pending'),
@@ -109,7 +109,7 @@ INSERT INTO `foodBuddy`.`reservation` (`customer_id`, `restauranttable_id`, `res
 (10, 10, '20:30', '2024-11-23', 'Pending');
 
 
--- Insert data into `notification` table
+-- -- Insert data into `notification` table
 INSERT INTO `foodBuddy`.`notification` (`customer_id`, `message`, `is_read`, `sent_date`) VALUES
 (1, 'Your reservation at Karachi Darbar is confirmed!', 0, '2024-11-19'),
 (2, 'Reservation pending at Lahore Tikka House', 0, '2024-11-19'),
@@ -123,7 +123,7 @@ INSERT INTO `foodBuddy`.`notification` (`customer_id`, `message`, `is_read`, `se
 (10, 'Reservation pending at Gujranwala Dine', 0, '2024-11-19');
 
 
--- Insert data into `payment` table
+-- -- Insert data into `payment` table
 INSERT INTO `foodBuddy`.`payment` (`reservation_id`, `amount`, `payment_status`) VALUES
 (1, 45.00, 'completed'),
 (2, 30.00, 'pending'),
@@ -137,7 +137,7 @@ INSERT INTO `foodBuddy`.`payment` (`reservation_id`, `amount`, `payment_status`)
 (10, 35.00, 'pending');
 
 
--- Insert data into `preferences` table
+-- -- Insert data into `preferences` table
 INSERT INTO `foodBuddy`.`preferences` (`customer_id`, `favorite_restaurant_id`, `preferred_seating_area`) VALUES
 (1, 2, 'Window Side'),
 (2, 3, 'Patio'),
@@ -151,7 +151,7 @@ INSERT INTO `foodBuddy`.`preferences` (`customer_id`, `favorite_restaurant_id`, 
 (10, 10, 'Outdoor');
 
 
--- Insert data into `review` table
+-- -- Insert data into `review` table
 INSERT INTO `foodBuddy`.`review` (`customer_id`, `restaurant_id`, `rating`, `comment`) VALUES
 (1, 1, 5, 'Amazing food and great ambiance.'),
 (2, 2, 4, 'Good service, but a bit pricey.'),

@@ -6,7 +6,7 @@ function PageNotFound() {
     <div>
       <h1>404 - Page Not Found</h1>
       <p>Oops! The page you're looking for doesn't exist.</p>
-      <Link to="/login">Go to Login Page</Link>
+      <Link to="/">Go to Login Page</Link>
     </div>
   );
 }
