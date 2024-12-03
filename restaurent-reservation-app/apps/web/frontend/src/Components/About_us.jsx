@@ -9,7 +9,7 @@ import about4 from '../assets/images/about-4.jpg';
 
 function AboutUs() {
   return (
-    <section className="about-us py-5 my-5">
+    <section className="about-us my-5">
       <div className="container">
         <div className="row gy-5 g-lg-5 align-items-center">
           <div className="col-lg-6 about-img-box">
@@ -28,7 +28,7 @@ function AboutUs() {
               </div>
             </div>
           </div>
-          <div className="col-lg-6 about-content" data-aos="fade-left">
+          <div className="col-lg-6 about-content py-5" data-aos="fade-left">
             <h5 className="section-title">About Us</h5>
             <h2 className="mb-4 dis">Welcome to <i className="fa fa-utensils me-2"></i>Restoran</h2>
             <p className="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.</p>

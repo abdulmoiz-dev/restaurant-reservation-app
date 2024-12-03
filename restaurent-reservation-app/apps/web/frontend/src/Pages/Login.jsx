@@ -41,7 +41,7 @@ const Login = ({ onSwitch }) => {
         });
 
         const data = await response.json();
-
+        
         if (response.ok) {
           setSuccess(true);
           window.location.href = `${window.location.origin}/home`;
