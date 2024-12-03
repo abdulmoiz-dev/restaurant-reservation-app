@@ -24,8 +24,7 @@ function Home() {
     <SearchBar/>
     <ShoppingCart/>
     <Banner/>
-   <Services/>
-    <AboutUs/>
+    <Services/>
     <MenuSection/>
     <Testimonials/>
     <OurChefs/>

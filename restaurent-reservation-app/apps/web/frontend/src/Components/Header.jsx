@@ -1,26 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../Styles/Header.css'; 
 import '../index.css';
 function Header() {
   return (
     <header>
       {/* Desktop Header */}
-      <div className="container header my-3 d-none d-lg-flex">
-        <div className="logo">
-          <a href="./index.html">
-            <i className="fa fa-utensils me-3"></i>
-            <h1 className="mb-0">Restarent managment system</h1>
-          </a>
+      <div className="container header d-none d-lg-flex rounded-pill text-center ">
+        <div className="logo ">
+          <Link to="/home">
+            <i className="fa text-center fa-utensils me-3 py-4"></i>
+            <h1 className="mb-0">Restaurant Management System</h1>
+          </Link>
         </div>
         <div className="menus">
           <ul className="d-flex mb-0">
-
+            <li className="list-unstyled py-2">
+              <Link className="text-decoration-none text-uppercase p-4" to="/home">
+                Home
+              </Link>
+            </li>
             
             <li className="list-unstyled py-2">
-              <a className="text-decoration-none text-uppercase p-4" href="./index.html">Home</a>
-            </li>
-            <li className="list-unstyled py-2">
-              <a className="text-decoration-none text-uppercase p-4" href="./about.html">About</a>
+              <Link className="text-decoration-none text-uppercase p-4" to="/about">About</Link>
             </li>
             <li className="list-unstyled py-2">
               <a className="text-decoration-none text-uppercase p-4" href="./reservation.html">Reservation</a>
