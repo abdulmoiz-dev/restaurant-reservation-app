@@ -34,7 +34,7 @@ const Signup = ({ onSwitch }) => {
 
     if (validateForm()) {
       try {
-        const response = await fetch('http://localhost:3001/', {
+        const response = await fetch('http://localhost:3001/signup', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
@@ -74,9 +74,10 @@ const Signup = ({ onSwitch }) => {
       <div className="mb-3">
         <label>Phone Number</label>
         <input
-          type="Ph#"
+          type="tel"
           className="form-control"
-          name="ph#"
+          name="phone_number"
+          placeholder="0300-00000000"
           value={formData.phone_number}
           onChange={handleInputChange}
         />
@@ -98,7 +99,7 @@ const Signup = ({ onSwitch }) => {
           type="password"
           className="form-control"
           name="password"
-          placeholder="••••••••"
+          placeholder="Password"
           value={formData.password}
           onChange={handleInputChange}
         />
