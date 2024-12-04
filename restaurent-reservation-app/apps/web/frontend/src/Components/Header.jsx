@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Styles/Header.css'; 
 import '../index.css';
+import Avatar from "../Components/Avatar"
 function Header() {
   return (
     <header>
@@ -89,7 +90,9 @@ function Header() {
               <li className="list-unstyled py-2">
                 <a className="text-dark text-decoration-none text-uppercase p-4" href="./contact.html">Contact</a>
               </li>
+              <li><Avatar/></li>
             </ul>
+            
           </div>
         </div>
       </div>

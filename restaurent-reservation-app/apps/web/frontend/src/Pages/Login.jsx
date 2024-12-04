@@ -77,7 +77,7 @@ const Login = ({ onSwitch }) => {
           type="password"
           className="form-control"
           name="password"
-          placeholder="••••••••"
+          placeholder="password"
           value={formData.password}
           onChange={handleInputChange}
         />
