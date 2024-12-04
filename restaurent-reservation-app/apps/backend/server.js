@@ -138,7 +138,27 @@ app.post('/logout', (req, res) => {
 });
 /////////////////////////// Logout call end ///////////////////////////////////
 
+/////////////////////////// get restaurants start /////////////////////////////
+app.get("/restaurant", async (req, res) => {
+  const query = `
+    SELECT name, location, phone_number, opening_hours, cuisine_type
+    FROM restaurant 
+  `;
 
+  try {
+    const connection = await dbConnect();
+
+    const [rows] = await connection.execute(query);
+
+    connection.release();
+
+    return res.status(200).json(rows);
+  } catch (err) {
+    console.error("Error fetching restaurants:", err.message);
+    return res.status(500).json({ message: "Failed to fetch restaurants. Please try again later." });
+  }
+});
+/////////////////////////// get restaurants start /////////////////////////////
 
 
 const PORT = 3001;

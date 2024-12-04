@@ -26,7 +26,7 @@ function Header() {
               <Link className="text-decoration-none text-uppercase p-4" to="/about">About</Link>
             </li>
             <li className="list-unstyled py-2">
-              <a className="text-decoration-none text-uppercase p-4" href="./reservation.html">Reservation</a>
+              <Link className="text-decoration-none text-uppercase p-4" to="/restaurents">Restaurents</Link>
             </li>
             <li className="list-unstyled py-2">
               <a className="text-decoration-none text-uppercase p-4" href="./menu.html">Menu</a>
