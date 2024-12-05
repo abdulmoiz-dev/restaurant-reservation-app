@@ -5,6 +5,7 @@ import PageNotFound from './Pages/PageNotFound'; // New 404 page component
 import AuthPage from './Pages/Auth';
 import About from './Pages/About';
 import Restaurents from './Pages/Restaurents';
+import Menu from './Pages/Menu';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/restaurents" element={<Restaurents />} />
+        <Route path="/menu" element={<Menu />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>

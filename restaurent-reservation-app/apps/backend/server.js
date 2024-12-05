@@ -141,8 +141,8 @@ app.post('/logout', (req, res) => {
 /////////////////////////// get restaurants start /////////////////////////////
 app.get("/restaurant", async (req, res) => {
   const query = `
-    SELECT name, location, phone_number, opening_hours, cuisine_type
-    FROM restaurant 
+    SELECT restaurant_id, name, location, phone_number, opening_hours, cuisine_type
+    FROM restaurant
   `;
 
   try {
@@ -158,7 +158,72 @@ app.get("/restaurant", async (req, res) => {
     return res.status(500).json({ message: "Failed to fetch restaurants. Please try again later." });
   }
 });
+
 /////////////////////////// get restaurants start /////////////////////////////
+
+
+/////////////////////////// get brach start ///////////////////////////////////
+app.get("/branches/:restaurant_id", async (req, res) => {
+  const { restaurant_id } = req.params;
+
+  const query = `
+    SELECT branch_id, branch_name, branch_location, branch_phone_number
+    FROM branch
+    WHERE restaurant_id = ?
+  `;
+
+  try {
+    const connection = await dbConnect();
+
+    const [rows] = await connection.execute(query, [restaurant_id]);
+
+    connection.release();
+
+    if (rows.length === 0) {
+      return res.status(404).json({ message: "No branches found for this restaurant." });
+    }
+
+    return res.status(200).json(rows);
+  } catch (err) {
+    console.error("Error fetching branches:", err.message);
+    return res.status(500).json({ message: "Failed to fetch branches. Please try again later." });
+  }
+});
+/////////////////////////// get brach end ///////////////////////////////////
+
+
+///////////////////////// Menu items start //////////////////////////////////
+app.get("/menu/:restaurantId", async (req, res) => {
+  const { restaurantId } = req.params;
+
+  const query = `
+    SELECT menu_id, item_name, description, price
+    FROM menu
+    WHERE restaurant_id = ?
+  `;
+
+  try {
+    const connection = await dbConnect();
+    const [rows] = await connection.execute(query, [restaurantId]);
+
+    connection.release();
+
+    if (rows.length > 0) {
+      return res.status(200).json(rows);
+    } else {
+      return res.status(404).json({ message: "Menu not found for this restaurant." });
+    }
+  } catch (err) {
+    console.error("Error fetching menu:", err.message);
+    return res.status(500).json({ message: "Failed to fetch menu. Please try again later." });
+  }
+});
+/////////////////////////// menu items end /////////////////////////////////
+
+
+
+
+
 
 
 const PORT = 3001;

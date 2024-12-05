@@ -29,9 +29,9 @@ function Restaurents() {
       <div className="container mt-4">
         {error && <div className="alert alert-danger">{error}</div>}
         <div className="row">
-          {restaurants.map((restaurant, index) => (
-            <div key={index} className="col-md-4 mb-4">
-              <RestaurentsCards restaurant={restaurant} />
+          {restaurants.map((restaurant) => (
+           <div key={restaurant.restaurant_id} className="col-md-4 mb-4">
+             <RestaurentsCards restaurant={restaurant} />
             </div>
           ))}
         </div>
