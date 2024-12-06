@@ -29,21 +29,15 @@ function Header() {
               <Link className="text-decoration-none text-uppercase p-4" to="/restaurents">Restaurents</Link>
             </li>
             <li className="list-unstyled py-2">
-              <a className="text-decoration-none text-uppercase p-4" href="./menu.html">Menu</a>
+              <Link className="text-decoration-none text-uppercase p-4" to="/">LogOut</Link>
             </li>
             <li className="list-unstyled py-2">
-              <a className="text-decoration-none text-uppercase p-4" href="./contact.html">Contact</a>
+              <Link className="text-decoration-none text-uppercase p-4" to="/see">Resrvations</Link>
             </li>
+        
           </ul>
         </div>
-        <div className="icons">
-          <a className="text-decoration-none" id="searchBtn" href="#">
-            <i className="fa fa-search me-3"></i>
-          </a>
-          <a className="text-decoration-none" id="shoppingbutton" href="#">
-            <i className="fa fa-shopping-bag me-3"></i>
-          </a>
-        </div>
+        
       </div>
 
       {/* Mobile Header */}
