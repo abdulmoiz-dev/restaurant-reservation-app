@@ -347,6 +347,108 @@ app.post("/payment", async (req, res) => {
 });
 ///////////////////// Payment end /////////////////////////////////
 
+/////////////////// see /////////////////////////////////
+app.get("/see", async (req, res) => {
+  const customerId = 1;  // Hardcoded customer_id = 1
+
+  try {
+    const connection = await dbConnect();
+
+    const [rows] = await connection.execute(
+      `SELECT reservation_id, reservation_time, status, price
+       FROM foodBuddy.reservation
+       WHERE customer_id = ?`,
+      [1] // Hardcoded for customer_id = 1
+    );
+    connection.release();  // Release the connection
+
+    if (rows.length === 0) {
+      return res.status(200).json({ message: "You have no reservations." });
+    }
+
+    return res.status(200).json(rows);  // Return all reservations for the customer
+  } catch (err) {
+    console.error("Error fetching reservations:", err.message);
+    return res.status(500).json({ message: "Server error. Please try again later." });
+  }
+});
+
+////////////////////////// see /////////////////////////
+
+
+//////////////////////  admin ////////////////////////
+app.post("/admin/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: "Please provide both email and password." });
+  }
+
+  try {
+    const connection = await dbConnect();
+
+    // Query the admin table (assuming there's an `admin` table)
+    const [rows] = await connection.execute("SELECT * FROM admin WHERE email = ?", [email]);
+
+    connection.release(); // Release the connection back to the pool
+
+    if (rows.length === 0) {
+      return res.status(401).json({ message: "Invalid email or password." });
+    }
+
+    const admin = rows[0];
+    if (admin.password === password) {
+      return res.status(200).json({ message: "Login successful!" });
+    } else {
+      return res.status(401).json({ message: "Invalid email or password." });
+    }
+  } catch (err) {
+    console.error("Login error:", err.message);
+    return res.status(500).json({ message: "Server error. Please try again later." });
+  }
+});
+//////////////////// admin ////////////////////////////////
+
+
+app.get("/admin/customers", async (req, res) => {
+  try {
+    const connection = await dbConnect();
+    const [rows] = await connection.execute('SELECT customer_id, email, name FROM customer');
+    connection.release();
+    res.status(200).json(rows);
+  } catch (err) {
+    res.status(500).json({ message: 'Unable to fetch customers' });
+  }
+});
+
+
+
+app.get("/admin/restaurants", async (req, res) => {
+  try {
+    const connection = await dbConnect();
+    const [rows] = await connection.execute('SELECT restaurant_id, name, location FROM restaurant');
+    connection.release();
+    res.status(200).json(rows);
+  } catch (err) {
+    res.status(500).json({ message: 'Unable to fetch restaurants' });
+  }
+});
+
+
+app.delete("/admin/customers/:customerId", async (req, res) => {
+  const { customerId } = req.params;
+  try {
+    const connection = await dbConnect();
+    await connection.execute('DELETE FROM customer WHERE customer_id = ?', [customerId]);
+    connection.release();
+    res.status(200).json({ message: 'Customer deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to delete customer' });
+  }
+});
+
+
+
 
 
 

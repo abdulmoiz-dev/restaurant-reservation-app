@@ -43,7 +43,7 @@ function Payment() {
 
           if (response.ok) {
             console.log("Reservation added successfully");
-            navigate("/success"); // Redirect to a success page
+            navigate("/see"); // Redirect to a success page
           } else {
             console.error("Failed to add reservation");
           }

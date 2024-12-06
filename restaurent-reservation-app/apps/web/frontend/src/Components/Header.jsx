@@ -11,7 +11,7 @@ function Header() {
         <div className="logo ">
           <Link to="/home">
             <i className="fa text-center fa-utensils me-3 py-4"></i>
-            <h1 className="mb-0">Restaurant Management System</h1>
+            <h1 className="mb-0 mt-3">Food Buddy</h1>
           </Link>
         </div>
         <div className="menus">
@@ -49,7 +49,7 @@ function Header() {
           <div className="logo">
             <a href="./index.html">
               <i className="fa fa-utensils me-3"></i>
-              <h1 className="mb-0">Restaurant Managment System</h1>
+              <h1 className="mb-0">Restaurant Managment</h1>
             </a>
           </div>
         </div>

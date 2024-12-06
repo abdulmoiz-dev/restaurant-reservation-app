@@ -8,6 +8,8 @@ import Restaurents from './Pages/Restaurents';
 import Menu from './Pages/Menu';
 import Payment from './Pages/Payment';
 import SeeReservations from './Pages/SeeReservations';
+import Admin from './Pages/Admin';
+import Dashboard from './Pages/Dashboard';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/see" element={<SeeReservations />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/dash" element={<Dashboard />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
