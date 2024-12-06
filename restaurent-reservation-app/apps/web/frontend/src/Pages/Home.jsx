@@ -4,8 +4,8 @@ import SearchBar from "../Components/Search_bar";
 import ShoppingCart from "../Components/shopping_cart";
 import Banner from "../Components/Banner";
 import MenuSection from "../Components/Our_Menu";
-import Testimonials from "../Components/Testimonials";
-import OurChefs from "../Components/Chefs";
+// import Testimonials from "../Components/Testimonials";
+// import OurChefs from "../Components/Chefs";
 import Reservation from "../Components/Reservations";
 import OurServices from "../Components/OurServices";
 import OurGallery from "../Components/Gallery";
@@ -25,8 +25,8 @@ function Home() {
     <Banner/>
     <Services/>
     <MenuSection/>
-    <Testimonials/>
-    <OurChefs/>
+    {/* <Testimonials/> */}
+    {/* <OurChefs/> */}
     <Reservation/>
     <OurServices/>
     <OurGallery/>

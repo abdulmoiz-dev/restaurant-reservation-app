@@ -74,7 +74,10 @@ app.post("/login", async (req, res) => {
 
     const customer = rows[0];
     if (customer.password === password) {
-      return res.status(200).json({ message: "Login successful!" });
+      
+      return res.status(200).json({ message: "Login successful!" }
+
+      );
     } else {
       return res.status(401).json({ message: "Invalid email or password." });
     }
@@ -221,7 +224,128 @@ app.get("/menu/:restaurantId", async (req, res) => {
 /////////////////////////// menu items end /////////////////////////////////
 
 
+/////////////////////////// Table Start ////////////////////////////////
+app.post("/restauranttable", async (req, res) => {
+  const { restaurantId, branchId, price } = req.body;
 
+  // Validate input data
+  if (!restaurantId || !branchId || !price) {
+    return res.status(400).json({ message: "Missing required fields." });
+  }
+
+  try {
+    const connection = await dbConnect();
+
+    // Check if restaurantId exists in the restaurant table
+    const restaurantQuery = `
+      SELECT * FROM restaurant WHERE restaurant_id = ?
+    `;
+    const [restaurantRows] = await connection.execute(restaurantQuery, [restaurantId]);
+    if (restaurantRows.length === 0) {
+      return res.status(404).json({ message: "Restaurant not found." });
+    }
+
+    // Check if branchId exists in the branch table
+    const branchQuery = `
+      SELECT * FROM branch WHERE branch_id = ? AND restaurant_id = ?
+    `;
+    const [branchRows] = await connection.execute(branchQuery, [branchId, restaurantId]);
+    if (branchRows.length === 0) {
+      return res.status(404).json({ message: "Branch not found for the given restaurant." });
+    }
+
+    // Hardcode the default values for capacity, availability, and location_in_restaurant
+    const query = `
+      INSERT INTO restauranttable (branch_id, capacity, is_available, location_in_restaurant, price)
+      VALUES (?, 5, 1, 'not_specified', ?)
+    `;
+
+    // Execute the query with the hardcoded values
+    const [result] = await connection.execute(query, [
+      branchId,
+      price
+    ]);
+
+    connection.release();
+
+    return res.status(201).json({
+      message: "Table added successfully.",
+      table_id: result.insertId, // MySQL auto-generated ID for the table
+    });
+  } catch (err) {
+    console.error("Error inserting table:", err.message);
+    return res.status(500).json({ message: "Failed to insert table. Please try again later." });
+  }
+});
+
+
+//////////////////////////// Table End //////////////////////////////
+
+
+//////////////////////// Reservation Start //////////////////////////
+app.post("/reservation", async (req, res) => {
+  const { customer_id, table_id, reservation_time, status, notification_sent, price } = req.body;
+
+  const query = `
+    INSERT INTO reservation (customer_id, table_id, reservation_time, status, notification_sent, price)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `;
+
+  try {
+    const connection = await dbConnect(); // Ensure dbConnect establishes a valid connection
+
+    const [result] = await connection.execute(query, [
+      customer_id,
+      table_id,
+      reservation_time,
+      status,
+      notification_sent,
+      price,
+    ]);
+
+    connection.release(); // Release connection back to the pool
+
+    return res.status(201).json({
+      message: "Reservation added successfully.",
+      reservation_id: result.insertId, // Returning the inserted ID for reference
+    });
+  } catch (err) {
+    console.error("Error adding reservation:", err.message);
+    return res.status(500).json({ message: "Failed to add reservation. Please try again later." });
+  }
+});
+///////////////////////// Reservation End //////////////////////////////
+
+///////////////////////// Payment Start ///////////////////////////////
+app.post("/payment", async (req, res) => {
+  const { reservation_id, amount, payment_status } = req.body;
+
+  const query = `
+    INSERT INTO payment (reservation_id, amount, payment_status)
+    VALUES (?, ?, ?)
+  `;
+
+  try {
+    const connection = await dbConnect(); // Establish a database connection
+
+    const [result] = await connection.execute(query, [
+      reservation_id,
+      amount,
+      payment_status,
+    ]);
+
+    connection.release(); // Release the connection back to the pool
+
+    return res.status(201).json({
+      message: "Payment recorded successfully.",
+      payment_id: result.insertId, // Returning the inserted ID for reference
+    });
+  } catch (err) {
+    console.error("Error adding payment:", err.message);
+    return res.status(500).json({ message: "Failed to record payment. Please try again later." });
+  }
+});
+///////////////////// Payment end /////////////////////////////////
 
 
 

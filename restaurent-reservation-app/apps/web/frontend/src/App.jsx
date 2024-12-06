@@ -6,6 +6,8 @@ import AuthPage from './Pages/Auth';
 import About from './Pages/About';
 import Restaurents from './Pages/Restaurents';
 import Menu from './Pages/Menu';
+import Payment from './Pages/Payment';
+import SeeReservations from './Pages/SeeReservations';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/restaurents" element={<Restaurents />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/see" element={<SeeReservations />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
