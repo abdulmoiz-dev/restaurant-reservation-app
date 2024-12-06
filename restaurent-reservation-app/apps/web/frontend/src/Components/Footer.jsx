@@ -82,10 +82,6 @@ const Footer = () => {
           </div>
         </div>
         <div className="row">
-          <p className="text-center pt-4 mt-3 pt-lg-0">
-            &copy; <span id="copyrightCurrentYear">{new Date().getFullYear()}</span> <b> Restoran.</b> All rights reserved. Design by 
-            <a href="https://www.linkedin.com/in/codewithshabbir/" className="fw-bold author-name"> Muhammad Shabbir</a>
-          </p>
         </div>
       </div>
     </footer>
